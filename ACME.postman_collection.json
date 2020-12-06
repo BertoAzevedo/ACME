@@ -1,0 +1,920 @@
+{
+	"info": {
+		"_postman_id": "392a3c52-75c8-45a9-96eb-c72155eb3739",
+		"name": "ACME",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Product Service",
+			"item": [
+				{
+					"name": "/Product",
+					"item": [
+						{
+							"name": "GET All Products",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/Product",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"Product"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET All Products Paginated",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/Product?start=5&n=5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"Product"
+									],
+									"query": [
+										{
+											"key": "start",
+											"value": "5"
+										},
+										{
+											"key": "n",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "/Product/:productID",
+					"item": [
+						{
+							"name": "GET a specific product",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/Product/1234567890128",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"Product",
+										"1234567890128"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "User Service",
+			"item": [
+				{
+					"name": "/User",
+					"item": [
+						{
+							"name": "GET /User - All Users (Moderator Auth)",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "berto",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/User",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"User"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET /User - All Users (Without Moderator Auth)",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/User",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"User"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST /User",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/User",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"User"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT /User",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/User",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"User"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE /User",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/User",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"User"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "/User/:userID",
+					"item": [
+						{
+							"name": "GET /User -  User Info",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/User/catarina",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"User",
+										"catarina"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET /User - User Info (With personal auth)",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "berto",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/User/berto",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"User",
+										"berto"
+									]
+								},
+								"description": "The return information is variable.\nIf has the correspondent user auth, it returns the password too, otherwise it doesnt"
+							},
+							"response": []
+						},
+						{
+							"name": "POST /User/:userID - Create user but id is in use",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/User/antonio",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"User",
+										"antonio"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST /User/:userID - Create user",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"maria@gmail.com\",\n    \"password\": \"1234\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/User/maria",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"User",
+										"maria"
+									]
+								},
+								"description": "Request body needed:\n{\n    \"email\": \"maria@gmail.com\",\n    \"password\": \"1234\"\n}"
+							},
+							"response": []
+						},
+						{
+							"name": "PUT /User/:userID - Create user",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"paulo@gmail.com\",\n    \"password\": \"1234\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/User/paulo",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"User",
+										"paulo"
+									]
+								},
+								"description": "Request body needed:\n{\n    \"email\": \"paulo@gmail.com\",\n    \"password\": \"1234\"\n}"
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE /User/:userID - Delete user without auth",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/User/catarina",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"User",
+										"catarina"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE /User/:userID - Delete user with auth",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "catarina",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/User/catarina",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"User",
+										"catarina"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT /User/:userID - Update a user (with personal auth)",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "berto",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"berto.azevedo@gmail.com\",\n    \"password\": \"berto.azevedo\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/User/berto",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"User",
+										"berto"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Review Service",
+			"item": [
+				{
+					"name": "/Review",
+					"item": [
+						{
+							"name": "GET /Review - All approved reviews (no auth needed)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/Review",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"Review"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET /Review - All approved reviews of a product (no auth needed)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/Review?productID=9876543210128",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"Review"
+									],
+									"query": [
+										{
+											"key": "productID",
+											"value": "9876543210128"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET /Review - Pending Reviews if has moderator authentication",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "berto",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/Review?status=pending",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"Review"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "pending"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET /Review - Pending Reviews of a product",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "berto",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/Review?status=pending&productID=9876543210128",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"Review"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "pending"
+										},
+										{
+											"key": "productID",
+											"value": "9876543210128"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET /Review - Pending Reviews of a product Paginated",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "berto",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/Review?start=0&n=5&productID=9876543210128&status=approved",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"Review"
+									],
+									"query": [
+										{
+											"key": "start",
+											"value": "0"
+										},
+										{
+											"key": "n",
+											"value": "5"
+										},
+										{
+											"key": "productID",
+											"value": "9876543210128"
+										},
+										{
+											"key": "status",
+											"value": "approved"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "/Review/:reviewID",
+					"item": [
+						{
+							"name": "GET /Review/:reviewID - Get information of a review",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/Review/a1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"Review",
+										"a1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST /Review/:reviewID - Create new review",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "catarina",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"text\": \"Porra! Muito bom\",\n    \"rating\": 3.5\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/Review/1234567890128",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"Review",
+										"1234567890128"
+									]
+								},
+								"description": "Request body required:\n{\n    \"text\": \"Porra! Muito bom\",\n    \"rating\": 3.5\n}\n"
+							},
+							"response": []
+						},
+						{
+							"name": "POST /Review/:reviewID - Create new review without auth is not possible",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"text\": \"Porra! Muito bom\",\n    \"rating\": 3.5\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/Review/1234567890128",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"Review",
+										"1234567890128"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT /Review/:reviewID - Update a review (auth of the author needed)",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "berto",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"text\": \"Afinal não é o que esperava.\",\n    \"rating\": 2\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/Review/a1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"Review",
+										"a1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE /Review/:reviewID - DELETE a review (auth of the author needed)",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "berto",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"text\": \"Afinal não é o que esperava.\",\n    \"rating\": 2\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/Review/a1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"Review",
+										"a1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT /Review/:reviewID - Change status of a review by a moderator",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "berto",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"status\": \"approved\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/Review/b2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"Review",
+										"b2"
+									]
+								},
+								"description": "\"approved\" \"pending\" \"rejected\"\n\n{\n    \"status\": \"approved\"\n}"
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
